@@ -19,7 +19,7 @@ export default function HandicapComponent(props) {
         <Typography className={classes.customTypo} variant="subtitle2">Handicap</Typography>
       </Grid>
         <Grid item xs>
-          {props.details.handicap}
+          {props.data?.details.handicap}
         </Grid>
     </Grid>
   </>);

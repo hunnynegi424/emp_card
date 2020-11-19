@@ -1,19 +1,15 @@
 import './App.css';
 import CardComponent from './components/card';
+import useGetInfo from './hooks/useGetInfo';
 import AvatarImage from './images/avatar.jpg';
 
 export default function App() {
+  const { data, loader } = useGetInfo();
   return (
     <div className="App">
       <CardComponent
-        name="David Ford"
-        address="Rye Golf Club (Old), UK"
-        avatar={AvatarImage}
-        details={{
-          quality: 80,
-          handicap: 'PRO',
-          sgTotal: 4.14,
-        }}
+        data={data}
+        loader={loader}
       />
     </div>
   );

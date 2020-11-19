@@ -8,6 +8,7 @@ import {
   Grid,
   Divider,
 } from '@material-ui/core';
+import CustomSkeleton from './skeleton';
 import QualityComponent from './detailcomponents/quality';
 import HandicapComponent from './detailcomponents/handicap';
 import SgtotalComponent from './detailcomponents/sgTotal';
@@ -39,17 +40,17 @@ export default function CardComponent(props) {
         <CardHeader
           className={classes.header}
           avatar={
-            <Avatar
+            props.loader ? <CustomSkeleton  variant="circle" dimensions={[70, 70]} /> : <Avatar
               aria-label="emp-card"
               className={classes.avatar}
-              src={props.avatar}              
+              src={props.data?.avatar}              
             />
           }
-          title={props.name}
+          title={props.loader ? <CustomSkeleton  variant="rect" dimensions={[150, 30, 0, 0, 6, 0]} /> : props.data?.name}
           titleTypographyProps={{
             variant: 'h6',
           }}
-          subheader={props.address}
+          subheader={props.loader ? <CustomSkeleton  variant="rect" dimensions={[180, 15]} /> : props.data?.address}
           subheaderTypographyProps={{
             variant: 'subtitle2'
           }}
@@ -61,16 +62,16 @@ export default function CardComponent(props) {
             direction="row"
             justify="flex-end"
           >
-            <QualityComponent {...props} />
+            {props.loader ? <CustomSkeleton  variant="rect" dimensions={[90, 35, 0,6,6,6]} /> : <QualityComponent {...props} />}
               <Divider orientation="vertical" flexItem/>
-            <HandicapComponent {...props} />
+            {props.loader ? <CustomSkeleton  variant="rect" dimensions={[90, 35, 0,6,6,6]} /> : <HandicapComponent {...props} />}
               <Divider orientation="vertical" flexItem/>
-            <SgtotalComponent {...props} />
+            {props.loader ? <CustomSkeleton  variant="rect" dimensions={[90, 35, 0,6,6,6]} /> : <SgtotalComponent {...props} />}
           </Grid>
           <Divider />
-          <LevelChartComp />
+          {props.loader ? <CustomSkeleton  variant="rect" dimensions={[300, 128, 12, 6, 12, 6]} /> : <LevelChartComp />}
             <Divider />
-          <LineGraphComp />
+          {props.loader ? <CustomSkeleton  variant="rect" dimensions={[300, 128, 12, 6, 0, 6]} /> : <LineGraphComp />}
         </CardContent>
       </Card>
     </div>

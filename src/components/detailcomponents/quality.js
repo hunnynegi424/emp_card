@@ -23,13 +23,13 @@ export default function QualityComponent(props) {
       </Grid>
       <Grid container spacing={2}>
         <Grid item xs={2}>
-          {props.details.quality}
+          {props.data?.details.quality}
         </Grid>
         <Grid item xs={3}>
           <ArrowDropUpSharpIcon />
         </Grid>
         <Grid item xs ={3}>
-          <CircularProgress className={classes.progress} size={25} variant="static" value={props.details.quality} />
+          <CircularProgress className={classes.progress} size={25} variant="static" value={props.data?.details.quality} />
         </Grid>
       </Grid>
     </Grid>

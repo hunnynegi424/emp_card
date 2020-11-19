@@ -21,7 +21,7 @@ export default function SgtotalComponent(props) {
       </Grid>
       <Grid container spacing={2}>
         <Grid item xs={4}>
-          {props.details.sgTotal}
+          {props.data?.details.sgTotal}
         </Grid>
         <Grid item xs>
           <ArrowDropUpSharpIcon />
