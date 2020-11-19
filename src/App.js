@@ -1,25 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import CardComponent from './components/card';
+import AvatarImage from './images/avatar.jpg';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CardComponent
+        name="David Ford"
+        address="Rye Golf Club (Old), UK"
+        avatar={AvatarImage}
+        details={{
+          quality: 80,
+          handicap: 'PRO',
+          sgTotal: 4.14,
+        }}
+      />
     </div>
   );
 }
 
-export default App;
